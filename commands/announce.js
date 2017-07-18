@@ -6,8 +6,8 @@ exports.data = {
   desc: 'Announce to @everyone',
   del: true
 }
-
-let config = require('D:\\cooliobotv2\\config.json');
+const path = require('path');
+let config = require(path.join(__dirname,'..','config.json'));
 const chanID = config.announceChannelID;
 
 exports.run = (client, msg, params) => {
