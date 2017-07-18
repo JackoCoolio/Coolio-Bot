@@ -6,8 +6,9 @@ exports.data = {
   desc: 'cakes somebody',
   del: true
 }
+const path = require('path');
 
-const Coolio = require('D:\\cooliobotv2\\index.js');
+const Coolio = require(path.join(__dirname,'..','index.js'));
 
 exports.run = (client, msg, params) => {
 

@@ -6,6 +6,7 @@ exports.data = {
   desc: 'Reloads a command.',
   del: true
 }
+const path = require('path');
 
 
 exports.run = (client, msg, params) => {
@@ -14,7 +15,7 @@ exports.run = (client, msg, params) => {
 
 
   if (params[0] === "config") {
-    delete require.cache[require.resolve('D:\\cooliobotv2\\config.json')];
+    delete require.cache[require.resolve(path.join(__dirname,'..','config.json'))];
     msg.channel.sendMessage('The config has been reloaded.');
     return;
   }

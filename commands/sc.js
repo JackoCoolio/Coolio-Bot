@@ -1,6 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-var sc = JSON.parse(fs.readFileSync('D:\\cooliobotv2\\shortcuts.json'));
+const path = require('path');
+var sc = JSON.parse(fs.readFileSync(path.join(__dirname,'..','shortcuts.json')));
 
 
 exports.data = {
@@ -27,7 +28,7 @@ exports.run = (client, msg, params) => {
 
 		sc[id] = text;
 
-		fs.writeFile('D:\\cooliobotv2\\shortcuts.json', JSON.stringify(sc), () => {
+		fs.writeFile(path.join(__dirname,'..','shortcuts.json'), JSON.stringify(sc), () => {
 			msg.channel.sendMessage('Shortcut created.');
 			msg.channel.sendMessage('You can now use `&sc ' + id + '` to use it.');
 		});

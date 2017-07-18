@@ -1,6 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-var cookies = JSON.parse(fs.readFileSync('D:\\cooliobotv2\\cookies.json'));
+const path = require('path');
+var cookies = JSON.parse(fs.readFileSync(path.join(__dirname,'..','cookies.json')));
 
 exports.data = {
   cmd: 'cookies',
@@ -68,7 +69,7 @@ exports.run = (client, msg, params) => {
     cookies[target.id] = targetData; //update JSON
     cookies[author.id] = authorData;
 
-    fs.writeFile('D:\\cooliobotv2\\cookies.json', JSON.stringify(cookies), () => {
+    fs.writeFile(path.join(__dirname,'..','cookies.json'), JSON.stringify(cookies), () => {
       msg.channel.sendEmbed({
         author: {
           name: 'Cookie Machine',

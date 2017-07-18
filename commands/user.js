@@ -6,8 +6,8 @@ exports.data = {
   desc: 'Gets information about a user on this server.',
   del: true
 }
-
-const Coolio = require('D:\\cooliobotv2\\index.js');
+const path = require('path');
+const Coolio = require(path.join(__dirname,'..','index.js'));
 const Discord = require('discord.js');
 
 exports.run = (client, msg, params) => {
