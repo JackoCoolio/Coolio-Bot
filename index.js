@@ -7,12 +7,12 @@ const prefix = config.prefix;
 
 
 var sounds = [];
-let dir = './sounds/';
-fs.readdir(dir, (err, files) => {
-  files.forEach(file => {
-    sounds.push(file);
-  });
-});
+//let dir = './sounds/';
+//fs.readdir(dir, (err, files) => {
+//  files.forEach(file => {
+//    sounds.push(file);
+//  });
+//});
 exports.sounds = sounds;
 
 
